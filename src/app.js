@@ -13,5 +13,13 @@ app.use(express.urlencoded({extended:true, limit:"16kb"})) //When you submit a H
 //You need both in most apps.
 
 app.use(express.static("public")) //Think of the public folder as a shop display window — whatever you put there, anyone can see it directly without asking the shopkeeper (your routes).
-app.use(express.cookieParser())
+app.use(cookieParser())
+
+
+//routes import
+import userRouter from './routes/user.routes.js';
+
+//routes declaration
+app.use("/api/v1/users",  userRouter)
+
 export {app}

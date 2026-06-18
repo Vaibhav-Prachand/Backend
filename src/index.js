@@ -6,7 +6,7 @@ import mongoose from "mongoose"   // whenver connecting with the database always
 import {DB_NAME} from "./constants.js"
 import connectDB from "./db/index.js"
 
-
+import { app } from "./app.js";
 
 connectDB()
 .then(()=>{

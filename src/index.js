@@ -1,7 +1,7 @@
 // require('dotenv').config({path: './env'})
-import dotenv from "dotenv";
-dotenv.config({ path: "./.env" });
+import "./config/dotenv.js"; 
 
+console.log("INDEX API KEY:", process.env.CLOUDINARY_API_KEY);
 import mongoose from "mongoose"   // whenver connecting with the database always handle it with try and acatch or async await
 import {DB_NAME} from "./constants.js"
 import connectDB from "./db/index.js"
@@ -18,7 +18,6 @@ connectDB()
 .catch((err)=>{
     console.log("mongodb connection failed",err);
 })
-
 
 
 
